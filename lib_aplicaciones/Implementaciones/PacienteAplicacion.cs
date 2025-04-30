@@ -43,6 +43,17 @@ namespace lib_aplicaciones.Implementaciones
             entidad = iRepositorio!.Guardar(entidad);
             return entidad;
         }
+        public Paciente GuardarPaciente(Paciente entidad)
+        {
+            if (entidad == null || !entidad.Validar())
+                throw new Exception("lbFaltaInformacion");
+
+            if (entidad.Id != 0)
+                throw new Exception("lbYaSeGuardo");
+
+            entidad = iRepositorio!.GuardarPaciente(entidad);
+            return entidad;
+        }
 
         public List<Paciente> Listar()
         {
