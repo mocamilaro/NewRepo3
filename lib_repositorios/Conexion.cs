@@ -29,7 +29,8 @@ namespace lib_repositorios
         }
 
         // DbSets para cada entidad
-
+        
+        public DbSet<Persona> Personas { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Secretaria> Secretarias { get; set; }
@@ -143,6 +144,21 @@ namespace lib_repositorios
 
         public virtual void Guardar<T>(T entidad) where T : class =>
             Set<T>().Add(entidad);
+
+        // Consulta directa a base de datos
+        public virtual void GuardarPaciente<Paciente>(Paciente entidad) where Paciente : class
+        {
+            // Convertir la entidad genérica a Paciente
+            var paciente = entidad as lib_entidades.Modelos.Paciente;
+            this.Database.ExecuteSqlRaw(
+                @"INSERT INTO Paciente (cedula, nombre, email) 
+                VALUES ({0}, {1}, {2})",
+                paciente.Cedula,
+                paciente.Nombre,
+                paciente.Email
+            );
+            
+        }
 
         public virtual async Task GuardarAsync<T>(T entidad) where T : class =>
             await Set<T>().AddAsync(entidad);
