@@ -8,6 +8,7 @@ namespace lib_aplicaciones.Interfaces
         List<Paciente> Buscar(Paciente entidad, string tipo);
         List<Paciente> Listar();
         Paciente Guardar(Paciente entidad);
+        Paciente GuardarPaciente(Paciente entidad);
         Paciente Modificar(Paciente entidad);
         Paciente Borrar(Paciente entidad);
     }
