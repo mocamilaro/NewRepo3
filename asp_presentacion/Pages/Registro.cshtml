@@ -1,0 +1,73 @@
+@page
+@model asp_presentacion.Pages.RegistroModel
+@{
+    
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISALUD - Paciente</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="~/images/logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/Registro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Regístrate</h1>
+            <img src="~/images/logo.svg" alt="MISALUD Logo" class="logo">
+        </div>
+
+
+        <form id="registrationForm" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <input type="text" class="form-control" asp-for="@Model.Actual!.Nombre" placeholder="Nombre completo" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" asp-for="@Model.Actual!.Cedula" placeholder="Documento de identidad" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" asp-for="@Model.Actual!.Email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <div class="password-container">
+                    <input type="password" class="form-control" placeholder="Contraseña" required>
+                    <button type="button" class="password-toggle" id="togglePassword">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1B6379" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="forgot-password">
+                    <a href="" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn" asp-page-handler="BtGuardar">Crear cuenta</button>
+
+            </div>
+        </form>
+
+        <div class="form-footer">
+            ¿Ya estás registrado? <a href="" id="iniciarSesion">Inicie sesión</a>
+        </div>
+    </div>
+
+  
+</body>
+</html>
