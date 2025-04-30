@@ -32,6 +32,12 @@ namespace lib_repositorios.Implementaciones
             conexion!.GuardarCambios();
             return entidad;
         }
+        public Paciente GuardarPaciente(Paciente entidad)
+        {
+            conexion!.GuardarPaciente(entidad);
+            conexion!.GuardarCambios();
+            return entidad;
+        }
 
         public Paciente Modificar(Paciente entidad)
         {
