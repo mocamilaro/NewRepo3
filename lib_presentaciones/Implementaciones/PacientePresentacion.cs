@@ -65,6 +65,25 @@ namespace lib_presentaciones.Implementaciones
                 JsonConversor.ConvertirAString(respuesta["Entidad"]));
             return entidad;
         }
+        public async Task<Paciente> GuardarPaciente(Paciente entidad)
+        {
+            if (entidad.Id != 0 || !entidad.Validar())
+            {
+                throw new Exception("lbFaltaInformacion");
+            }
+
+            var datos = new Dictionary<string, object>();
+            datos["Entidad"] = entidad;
+
+            var respuesta = await iComunicacion!.GuardarPaciente(datos);
+            if (respuesta.ContainsKey("Error"))
+            {
+                throw new Exception(respuesta["Error"].ToString()!);
+            }
+            entidad = JsonConversor.ConvertirAObjeto<Paciente>(
+                JsonConversor.ConvertirAString(respuesta["Entidad"]));
+            return entidad;
+        }
 
         public async Task<Paciente> Modificar(Paciente entidad)
         {
