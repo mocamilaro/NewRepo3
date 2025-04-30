@@ -17,6 +17,11 @@ namespace lib_comunicaciones.Implementaciones
             datos = comunicaciones!.BuildUrl(datos, "Guardar");
             return await comunicaciones!.Execute(datos);
         }
+        public async Task<Dictionary<string, object>> GuardarPaciente(Dictionary<string, object> datos)
+        {
+            datos = comunicaciones!.BuildUrl(datos, "GuardarPaciente");
+            return await comunicaciones!.Execute(datos);
+        }
 
         public async Task<Dictionary<string, object>> Buscar(Dictionary<string, object> datos)
         {
