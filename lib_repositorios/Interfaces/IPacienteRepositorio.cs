@@ -9,6 +9,7 @@ namespace lib_repositorios.Interfaces
         List<Paciente> Listar();
         List<Paciente> Buscar(Expression<Func<Paciente, bool>> condiciones);
         Paciente Guardar(Paciente entidad);
+        Paciente GuardarPaciente(Paciente entidad);
         Paciente Modificar(Paciente entidad);
         Paciente Borrar(Paciente entidad);
 
