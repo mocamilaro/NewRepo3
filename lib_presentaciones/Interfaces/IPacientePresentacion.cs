@@ -7,6 +7,7 @@ namespace lib_presentaciones.Interfaces
         Task<List<Paciente>> Listar();
         Task<List<Paciente>> Buscar(Paciente entidad, string tipo);
         Task<Paciente> Guardar(Paciente entidad);
+        Task<Paciente> GuardarPaciente(Paciente entidad);
         Task<Paciente> Modificar(Paciente entidad);
         Task<Paciente> Borrar(Paciente entidad);
     }
