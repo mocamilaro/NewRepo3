@@ -126,6 +126,36 @@ namespace asp_servicios.Controllers
                 return JsonConversor.ConvertirAString(respuesta);
             }
         }
+        [HttpPost]
+        public string GuardarPaciente()
+        {
+            var respuesta = new Dictionary<string, object>();
+            try
+            {
+                var datos = ObtenerDatos();
+                if (!tokenController!.Validate(datos))
+                {
+                    respuesta["Error"] = "lbNoAutenticacion";
+                    return JsonConversor.ConvertirAString(respuesta);
+                }
+
+                var entidad = JsonConversor.ConvertirAObjeto<Paciente>(
+                    JsonConversor.ConvertirAString(datos["Entidad"]));
+
+                this.iAplicacion!.Configurar(Configuracion.ObtenerValor("ConnectionStrings:DefaultConnection"));
+                entidad = this.iAplicacion!.GuardarPaciente(entidad);
+
+                respuesta["Entidad"] = entidad;
+                respuesta["Respuesta"] = "OK";
+                respuesta["Fecha"] = DateTime.Now.ToString();
+                return JsonConversor.ConvertirAString(respuesta);
+            }
+            catch (Exception ex)
+            {
+                respuesta["Error"] = ex.Message.ToString();
+                return JsonConversor.ConvertirAString(respuesta);
+            }
+        }
 
         [HttpPost]
         public string Modificar()
