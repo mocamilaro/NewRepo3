@@ -14,10 +14,10 @@
 <body>
     <div class="historial-clinico">
         <div class="div">
-            <a href="Index"> 
-            <div class="arrow">
-                <img src="~/images/left-arrow.png" />
-            </div>
+            <a href="Index">
+                <div class="arrow">
+                    <img src="~/images/left-arrow.png" />
+                </div>
             </a>
             <div class="overlap-2">
                 <div class="horizontal-card">
@@ -25,9 +25,8 @@
                     <div class="illustration"></div>
                 </div>
                 <img class="image" src="https://c.animaapp.com/47gfdr1M/img/image-33@2x.png" />
-            
 
-                 <!-- Formulario -->
+                <!-- Formulario -->
                 <div class="search-form-container">
                     <form method="post">
                         <input type="text" class="search-input" asp-for="Filtro.Paciente.Cedula" placeholder="Buscar por cédula">
@@ -35,7 +34,16 @@
                     </form>
                 </div>
             </div>
-                 <div class="overlap-group">
+
+            <div class="overlap-group">
+
+                @if (Model.ErrorConsulta)
+                {
+                    <div class="alert-error">
+                        <p>Ha ocurrido un error.</p>
+                        <p>Intentando recargar la información.</p>
+                    </div>
+                } else {
                     <!-- Mensaje de alerta -->
                     @if (Model.Actual == null)
                     {
@@ -43,10 +51,8 @@
                     }
                     else
                     {
-            
                         <div class="alert-success">Paciente encontrado.</div>
-            
-                    
+
                         <div class="card-grid">
                             <div class="row">
                                 <div class="note-card">
@@ -71,9 +77,13 @@
                                     @if (Model.Actual.Paciente?.Citas != null && Model.Actual.Paciente.Citas.Any())
                                     {
                                         var cita = Model.Actual.Paciente.Citas.First();
-                                        <p class="div-2">Fecha: @cita.Fecha.ToString("dd/MM/yyy")</p>
+                                        <p class="div-2">Fecha: @cita.Fecha.ToString("dd/MM/yyyy")</p>
                                         <p class="div-2">Motivo: @cita.Motivo</p>
                                         <p class="div-2">Médico: @cita.Medico?.Nombre</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="alert-warning">No se encontraron citas previas.</p>
                                     }
                                 </div>
 
@@ -86,6 +96,10 @@
                                         <p class="div-2">Fecha: @diag.Fecha.ToString("dd/MM/yyyy")</p>
                                         <p class="div-2">Médico: @diag.Medico?.Nombre</p>
                                     }
+                                    else
+                                    {
+                                        <p class="alert-warning">No se encontraron diagnósticos.</p>
+                                    }
                                 </div>
                             </div>
 
@@ -97,6 +111,10 @@
                                         var trat = Model.Actual.Tratamientos.First();
                                         <p class="div-2">Descripción: @trat.Descripcion</p>
                                         <p class="div-2">Fecha: @trat.FechaInicio.ToString("dd/MM/yyyy")</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="alert-warning">No se encontraron tratamientos.</p>
                                     }
                                 </div>
 
@@ -112,13 +130,21 @@
                                             <p class="div-2">Dosis: @med.Dosis</p>
                                             <p class="div-2">Frecuencia: @med.Frecuencia</p>
                                         }
+                                        else
+                                        {
+                                            <p class="alert-warning">No se encontraron medicamentos en la fórmula.</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="alert-warning">No se encontraron fórmulas.</p>
                                     }
                                 </div>
                             </div>
                         </div>
-                     
                     }
-                 </div>
+                }
+            </div>
         </div>
     </div>
 </body>

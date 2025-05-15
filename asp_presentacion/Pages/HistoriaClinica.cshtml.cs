@@ -37,6 +37,8 @@ namespace asp_presentacion.Pages
         [BindProperty] public HistoriaClinica? Actual { get; set; }
         [BindProperty] public HistoriaClinica? Filtro { get; set; }
         [BindProperty] public List<HistoriaClinica>? Lista { get; set; }
+        [BindProperty] public bool ErrorConsulta { get; set; } = false;
+        [BindProperty] public string? MensajeError { get; set; }
 
 
         public void OnPostBuscar()
@@ -51,18 +53,26 @@ namespace asp_presentacion.Pages
                     task.Wait();
                     Lista = task.Result;
 
-                    // Buscar exactamente por la cédula digitada
                     Actual = Lista?.FirstOrDefault(h => h.Paciente?.Cedula == Filtro.Paciente.Cedula);
 
                     // Limpiar el campo después de buscar
                     Filtro.Paciente.Cedula = "";
+
+                    // No hay error si la consulta fue exitosa
+                    ErrorConsulta = false;
+                    MensajeError = null;
                 }
                 catch (Exception ex)
                 {
                     LogConversor.Log(ex, ViewData!);
+                    ErrorConsulta = true;
+                    MensajeError = "Ha ocurrido un error. Intentando recargar la información.";
+                    Actual = null;    // Por seguridad, para que no muestre datos erróneos
+                    Lista = null;
                 }
             }
         }
+
         public void OnPostBtRefrescar()
         {
             if (Filtro!.Paciente != null)
