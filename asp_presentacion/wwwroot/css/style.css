@@ -1,7 +1,13 @@
+.body{
+    display:flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
 .element-panel-principal {
-    background-color: #ffffff;
+    background-color: black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
 }
