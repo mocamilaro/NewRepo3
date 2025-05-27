@@ -1,4 +1,4 @@
-.historial-clinico {
+.perfil {
     background-color: ghostwhite;
     display: flex;
     flex-direction: row;
@@ -6,14 +6,14 @@
     width: 100%;
 }
 
-    .historial-clinico .arrow img{
+    .perfil .arrow img{
         margin-top: 10px;
         width: 30px;
         height: 30px;
         margin-left: 10px;
     }
 
-    .historial-clinico .div {
+    .perfil .div {
         background-color: var(--palettewhite);
         width: 375px;
         min-height: 92vh; /* Asegura altura mínima completa de pantalla */
@@ -23,47 +23,34 @@
         padding-bottom: 7px;
     }
 
-        .historial-clinico .div::-webkit-scrollbar {
+        .perfil .div::-webkit-scrollbar {
             width: 0;
             display: none;
         }
 
-    .historial-clinico .overlap-group {
+    .perfil .overlap-group {
         position: absolute;
-        width: 90%;
+        width: 100%;
         height: 300px;
-        top: 202px;
+        top: 92px;
         text-align:center;
     }
 
-    .historial-clinico .card-grid {
+    .perfil .card-grid {
         display: flex;
         flex-direction: column;
         width: 375px;
         align-items: flex-start;
         padding: 16px;
         position: absolute;
-        background-color: var(--inkink-06);
+        background-color: white;
         border-radius: 16px 16px 0px 0px;
         margin-left: 0px;
         text-align: left;
-        height:468px;
+        height:168px;
     }
 
-    .historial-clinico .note-card {
-        height: 140px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 18px 16px;
-        align-self: stretch;
-        background-color: var(--palettewhite);
-        border-radius: 12px;
-        box-shadow: var(--elevation);
-        font-size: 18px;
-    }
-
-    .historial-clinico .today {
+    .perfil .today {
         position: relative;
         align-self: stretch;
         margin-top: -1.00px;
@@ -76,7 +63,7 @@
         font-style: var(--paragraph-p1-font-style);
     }
 
-    .historial-clinico .div-2 {
+    .perfil .div-2 {
         align-self: stretch;
         font-family: var(--paragraph-p2-font-family);
         font-weight: var(--paragraph-p2-font-weight);
@@ -85,7 +72,7 @@
         font-style: var(--paragraph-p2-font-style);
     }
 
-    .historial-clinico .p {
+    .perfil .p {
         font-weight: 800;
         color: #4d7b80;
         font-family: var(--paragraph-p2-font-family);
@@ -93,7 +80,7 @@
         font-style: var(--paragraph-p2-font-style);
     }
 
-    .historial-clinico .span {
+    .perfil .span {
         font-weight: var(--paragraph-p2-font-weight);
         font-family: var(--paragraph-p2-font-family);
         font-style: var(--paragraph-p2-font-style);
@@ -102,7 +89,7 @@
         font-size: var(--paragraph-p2-font-size);
     }
 
-    .historial-clinico .overlap {
+    .perfil .overlap {
         position: absolute;
         width: 24px;
         height: 24px;
@@ -112,7 +99,7 @@
         background-size: 100% 100%;
     }
 
-    .historial-clinico .overlap-2 {
+    .perfil .overlap-2 {
         position: absolute;
         width: 343px;
         height: 116px;
@@ -121,7 +108,7 @@
         border-radius: 12px;
     }
 
-    .historial-clinico .horizontal-card {
+    .perfil .horizontal-card {
         display: flex;
         width: 343px;
         height: 110px;
@@ -135,7 +122,8 @@
         border-radius: 12px;
     }
 
-    .historial-clinico .your-diet-chart {
+
+    .perfil .your-diet-chart {
         position: relative;
         flex: 1;
         font-family: var(--heading-h5-font-family);
@@ -145,9 +133,57 @@
         letter-spacing: var(--heading-h5-letter-spacing);
         line-height: var(--heading-h5-line-height);
         font-style: var(--heading-h5-font-style);
+        margin-left: 10px;
+        margin-top: 10px;
     }
 
-    .historial-clinico .illustration {
+    .perfil .your-diet-chartn {
+        position: relative;
+        flex: 1;
+        font-family: var(--heading-h5-font-family);
+        font-weight: var(--heading-h5-font-weight);
+        color: #1b6379;
+        font-size: var(--heading-h5-font-size);
+        letter-spacing: var(--heading-h5-letter-spacing);
+        line-height: var(--heading-h5-line-height);
+        font-style: var(--heading-h5-font-style);
+        margin-left: 125px;
+        margin-top: 10px;
+        top:130px;
+    }
+
+    .perfil .your-diet-chart1 {
+        position: relative;
+        flex: 1;
+        font-family: var(--heading-h5-font-family);
+        font-weight: 500;
+        color: #1b6379;
+        font-size: 10px;
+        letter-spacing: var(--heading-h5-letter-spacing);
+        line-height: var(--heading-h5-line-height);
+        font-style: var(--heading-h5-font-style);
+        margin-left: 130px;
+        margin-top: 10px;
+        top: 100px;
+    }
+
+    .perfil .your-diet-chart2 {
+        position: relative;
+        flex: 1;
+        font-family: var(--heading-h5-font-family);
+        font-weight: 800;
+        color: #1b6379;
+        font-size: 15px;
+        letter-spacing: var(--heading-h5-letter-spacing);
+        line-height: var(--heading-h5-line-height);
+        font-style: var(--heading-h5-font-style);
+        margin-left: 50px;
+        margin-top: 15px;
+        top: 250px;
+        text-align: left;
+    }
+
+    .perfil .illustration {
         display: inline-flex;
         flex-direction: column;
         align-items: flex-start;
@@ -157,16 +193,85 @@
         flex: 0 0 auto;
     }
 
-    .historial-clinico .image {
+    .perfil .image {
         position: absolute;
-        width: 70px;
-        height: 70px;
-        top: 23px;
-        left: 220px;
+        width: 120px;
+        height: 120px;
+        left: 125px;
         object-fit: cover;
+        border-radius: 50%;
+        border: 7px solid var(--inkink-06);
     }
 
-    .historial-clinico .black-button {
+    .perfil .image2 {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 215px;
+        top: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        z-index: 10;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .perfil .image3 {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 335px;
+        object-fit: cover;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .perfil #img1 {
+        top: 270px;
+    }
+    
+    .perfil #img2 {
+        top: 310px;
+    }
+    
+    .perfil #img3 {
+        top: 350px;
+    }
+
+    .perfil .image4 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 20px;
+        object-fit: cover;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .perfil #img4 {
+        top: 267px;
+        width: 23px;
+        height: 23px;
+        left: 18px;
+    }
+
+    .perfil #img5 {
+        top: 308px;
+        width: 23px;
+        height: 23px;
+        left: 18px;
+    }
+
+    .perfil #img6 {
+        top: 350px;
+    }
+
+    .perfil #img7 {
+        top: 392px;
+    }
+
+
+
+    .perfil .black-button {
         position: absolute;
         width: 50px;
         height: 50px;
@@ -175,7 +280,7 @@
         object-fit: cover;
     }
 
-    .historial-clinico .navbar {
+    .perfil .navbar {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -188,7 +293,7 @@
         z-index: 10;
     }
 
-    .historial-clinico .img {
+    .perfil .img {
         position: relative;
         width: 24px;
         height: 24px;
@@ -197,17 +302,17 @@
 
     /*FORMULARIO*/
 
-    .historial-clinico .search-form-container {
+    .perfil .search-form-container {
         position: relative; /* quitar el absolute */
         width: 375px;
-        top:150px;
+        top:350px;
         margin: 0 auto;
         z-index: 10;
         padding: 10px 16px;
         border-radius: 12px;
     }
 
-    .historial-clinico .search-button1 {
+    .perfil .search-button1 {
         background-color: #28bbc9;
         color: white;
         border: none;
@@ -221,7 +326,7 @@
         margin-top: 10px; 
     }
 
-    .historial-clinico .search-button2 {
+    .perfil .search-button2 {
         background-color: white;
         color: #28bbc9;
         padding: 12px 20px;
@@ -235,7 +340,7 @@
         border-color: #28bbc9;
     }
 
-    .historial-clinico .alert-warning {
+    .perfil .alert-warning {
         width: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
@@ -246,8 +351,8 @@
         line-height: var(--paragraph-p2-line-height);
     }
 
-    .historial-clinico .alert-success,
-    .historial-clinico .alert-error {
+    .perfil .alert-success,
+    .perfil .alert-error {
         width: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
@@ -259,15 +364,15 @@
         margin-left: 21px;
     }
 
-    .historial-clinico .alert-success {
+    .perfil .alert-success {
         background-color: #e6fffa;
         color: #1b6379;
         border: 1px solid #28bbc9;
         width: 100%;
     }
 
-    .historial-clinico .alert-warning,
-    .historial-clinico .alert-error {
+    .perfil .alert-warning,
+    .perfil .alert-error {
         background-color: #fff8e1;
         color: #996d00;
         border: 1px solid #ffc107;

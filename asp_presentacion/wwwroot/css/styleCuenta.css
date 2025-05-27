@@ -1,4 +1,4 @@
-.historial-clinico {
+.cuenta {
     background-color: ghostwhite;
     display: flex;
     flex-direction: row;
@@ -6,14 +6,14 @@
     width: 100%;
 }
 
-    .historial-clinico .arrow img{
+    .cuenta .arrow img{
         margin-top: 10px;
         width: 30px;
         height: 30px;
         margin-left: 10px;
     }
 
-    .historial-clinico .div {
+    .cuenta .div {
         background-color: var(--palettewhite);
         width: 375px;
         min-height: 92vh; /* Asegura altura mínima completa de pantalla */
@@ -23,77 +23,174 @@
         padding-bottom: 7px;
     }
 
-        .historial-clinico .div::-webkit-scrollbar {
+        .cuenta .div::-webkit-scrollbar {
             width: 0;
             display: none;
         }
 
-    .historial-clinico .overlap-group {
+    .cuenta .overlap-group {
         position: absolute;
         width: 90%;
-        height: 300px;
-        top: 202px;
+        height: 260px;
+        top: 302px;
         text-align:center;
     }
 
-    .historial-clinico .card-grid {
+    .cuenta .card-grid {
         display: flex;
         flex-direction: column;
         width: 375px;
         align-items: flex-start;
+        gap: 10px;
         padding: 16px;
         position: absolute;
-        background-color: var(--inkink-06);
-        border-radius: 16px 16px 0px 0px;
+        top: 30px;
+        background-color: white;
+        border-radius: 16px;
+        overflow-y: scroll;
+        margin-top: 70px;
         margin-left: 0px;
         text-align: left;
-        height:468px;
     }
 
-    .historial-clinico .note-card {
-        height: 140px;
+        .cuenta .card-grid::-webkit-scrollbar {
+            width: 0;
+            display: none;
+        }
+
+    .cuenta .row {
+        height: 172px;
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+    }
+
+    .cuenta .note-card {
+        height: 110px;
+        width: 343px;
         display: flex;
         flex-direction: column;
         gap: 8px;
         padding: 18px 16px;
         align-self: stretch;
         background-color: var(--palettewhite);
-        border-radius: 12px;
-        box-shadow: var(--elevation);
+        border-radius: 8px;
         font-size: 18px;
+        border: 1px solid var(--inkink-06);
+        top:200px;
     }
 
-    .historial-clinico .today {
+    .cuenta li {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+li.li1::marker {
+    color: #7142d1;
+    font-size: 30px;
+}
+
+li.li2::marker {
+    color: #fec32b;
+    font-size: 30px;
+}
+
+li.li3::marker {
+    color: #39c3ef;
+    font-size: 30px;
+}
+
+    .cuenta .today {
         position: relative;
         align-self: stretch;
-        margin-top: -1.00px;
+        margin-top: 5px;
         font-family: var(--paragraph-p1-font-family);
-        font-weight: var(--paragraph-p1-font-weight);
+        font-weight: 500;
         color: #28bbc9;
-        font-size: var(--paragraph-p1-font-size);
+        font-size: 18px;
         letter-spacing: var(--paragraph-p1-letter-spacing);
         line-height: var(--paragraph-p1-line-height);
         font-style: var(--paragraph-p1-font-style);
     }
 
-    .historial-clinico .div-2 {
-        align-self: stretch;
-        font-family: var(--paragraph-p2-font-family);
+    .cuenta .text-wrapper {
+        margin-bottom: -14.00px;
         font-weight: var(--paragraph-p2-font-weight);
         color: #4d7b80;
-        font-size: 10px;
-        font-style: var(--paragraph-p2-font-style);
-    }
-
-    .historial-clinico .p {
-        font-weight: 800;
-        color: #4d7b80;
+        position: relative;
+        align-self: stretch;
         font-family: var(--paragraph-p2-font-family);
-        font-size: 18px;
+        font-size: var(--paragraph-p2-font-size);
+        letter-spacing: var(--paragraph-p2-letter-spacing);
+        line-height: var(--paragraph-p2-line-height);
         font-style: var(--paragraph-p2-font-style);
     }
 
-    .historial-clinico .span {
+    .cuenta .row-2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .cuenta .div-2 {
+        position: relative;
+        align-self: stretch;
+        font-family: var(--paragraph-p2-font-family);
+        font-weight: 500;
+        color: #4d7b80;
+        font-size: 13px;
+        letter-spacing: var(--paragraph-p2-letter-spacing);
+        line-height: var(--paragraph-p2-line-height);
+        font-style: var(--paragraph-p2-font-style);
+        margin-top: 5px;
+    }
+
+    .cuenta .row-3 {
+        height: 152px;
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+    }
+
+    .cuenta .note-card-2 {
+        display: flex;
+        flex-direction: column;
+        height: 94px;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 24px 16px;
+        position: relative;
+        flex: 1;
+        flex-grow: 1;
+        background-color: var(--palettewhite);
+        border-radius: 12px;
+        box-shadow: var(--elevation);
+    }
+
+    .cuenta .p {
+        margin-bottom: -13.00px;
+        font-weight: var(--paragraph-p2-font-weight);
+        color: #4d7b80;
+        position: relative;
+        align-self: stretch;
+        font-family: var(--paragraph-p2-font-family);
+        font-size: 15px;
+        letter-spacing: var(--paragraph-p2-letter-spacing);
+        line-height: var(--paragraph-p2-line-height);
+        font-style: var(--paragraph-p2-font-style);
+    }
+
+    .cuenta .span {
         font-weight: var(--paragraph-p2-font-weight);
         font-family: var(--paragraph-p2-font-family);
         font-style: var(--paragraph-p2-font-style);
@@ -102,7 +199,7 @@
         font-size: var(--paragraph-p2-font-size);
     }
 
-    .historial-clinico .overlap {
+    .cuenta .overlap {
         position: absolute;
         width: 24px;
         height: 24px;
@@ -112,7 +209,7 @@
         background-size: 100% 100%;
     }
 
-    .historial-clinico .overlap-2 {
+    .cuenta .overlap-2 {
         position: absolute;
         width: 343px;
         height: 116px;
@@ -121,7 +218,7 @@
         border-radius: 12px;
     }
 
-    .historial-clinico .horizontal-card {
+    .cuenta .horizontal-card {
         display: flex;
         width: 343px;
         height: 110px;
@@ -129,13 +226,14 @@
         gap: 10px;
         padding: 0px 16px;
         position: absolute;
-        top: 0;
-        left: 0;
-        background-color: var(--inkink-06);
+        top: 100px;
+        left: 17px;
+        background-color: var(--pallettewhite);
         border-radius: 12px;
+        border: 1px solid var(--inkink-06);
     }
 
-    .historial-clinico .your-diet-chart {
+    .cuenta .your-diet-chart {
         position: relative;
         flex: 1;
         font-family: var(--heading-h5-font-family);
@@ -145,37 +243,13 @@
         letter-spacing: var(--heading-h5-letter-spacing);
         line-height: var(--heading-h5-line-height);
         font-style: var(--heading-h5-font-style);
+        margin-left: 10px;
+        margin-top: 10px;
     }
 
-    .historial-clinico .illustration {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 4px;
-        position: relative;
-        flex: 0 0 auto;
-    }
 
-    .historial-clinico .image {
-        position: absolute;
-        width: 70px;
-        height: 70px;
-        top: 23px;
-        left: 220px;
-        object-fit: cover;
-    }
 
-    .historial-clinico .black-button {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: 410px;
-        left: 317px;
-        object-fit: cover;
-    }
-
-    .historial-clinico .navbar {
+    .cuenta .navbar {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -188,7 +262,7 @@
         z-index: 10;
     }
 
-    .historial-clinico .img {
+    .cuenta .img {
         position: relative;
         width: 24px;
         height: 24px;
@@ -197,17 +271,31 @@
 
     /*FORMULARIO*/
 
-    .historial-clinico .search-form-container {
+    .cuenta .search-form-container {
         position: relative; /* quitar el absolute */
-        width: 375px;
-        top:150px;
+        width: 343px;
+        top:130px;
         margin: 0 auto;
         z-index: 10;
         padding: 10px 16px;
+        background-color: var(--inkink-06);
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid #e0e0e0;
         border-radius: 12px;
     }
 
-    .historial-clinico .search-button1 {
+    .cuenta .search-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #d0d0d0;
+        border-radius: 8px;
+        font-family: var(--paragraph-p2-font-family);
+        font-size: var(--paragraph-p2-font-size);
+        color: var(--letra);
+        margin-bottom: 12px;
+    }
+
+    .cuenta .search-button {
         background-color: #28bbc9;
         color: white;
         border: none;
@@ -217,25 +305,14 @@
         cursor: pointer;
         width: 100%;
         font-family: var(--paragraph-p2-font-family);
-        font-size: 12px;
-        margin-top: 10px; 
+        font-size: var(--paragraph-p2-font-size);
     }
 
-    .historial-clinico .search-button2 {
-        background-color: white;
-        color: #28bbc9;
-        padding: 12px 20px;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        width: 100%;
-        font-family: var(--paragraph-p2-font-family);
-        font-size: 12px;
-        margin-top: 10px;
-        border-color: #28bbc9;
-    }
+        .cuenta .search-button:hover {
+            background-color: #1b9eab;
+        }
 
-    .historial-clinico .alert-warning {
+    .cuenta .alert-warning {
         width: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
@@ -246,8 +323,8 @@
         line-height: var(--paragraph-p2-line-height);
     }
 
-    .historial-clinico .alert-success,
-    .historial-clinico .alert-error {
+    .cuenta .alert-success,
+    .cuenta .alert-error {
         width: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
@@ -259,15 +336,15 @@
         margin-left: 21px;
     }
 
-    .historial-clinico .alert-success {
+    .cuenta .alert-success {
         background-color: #e6fffa;
         color: #1b6379;
         border: 1px solid #28bbc9;
         width: 100%;
     }
 
-    .historial-clinico .alert-warning,
-    .historial-clinico .alert-error {
+    .cuenta .alert-warning,
+    .cuenta .alert-error {
         background-color: #fff8e1;
         color: #996d00;
         border: 1px solid #ffc107;
