@@ -33,6 +33,7 @@ namespace asp_presentacion.Pages
             }
         }
 
+        [BindProperty] public bool BusquedaRealizada { get; set; }
         [BindProperty] public Enumerables.Ventanas Accion { get; set; }
         [BindProperty] public HistoriaClinica? Actual { get; set; }
         [BindProperty] public HistoriaClinica? Filtro { get; set; }
@@ -43,6 +44,8 @@ namespace asp_presentacion.Pages
 
         public void OnPostBuscar()
         {
+            BusquedaRealizada = true;
+
             if (!string.IsNullOrEmpty(Filtro?.Paciente?.Cedula))
             {
                 try

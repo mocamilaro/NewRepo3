@@ -1,5 +1,5 @@
 .historial-clinico {
-    background-color: black;
+    background-color: ghostwhite;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,16 +8,15 @@
 
     .historial-clinico .arrow img{
         margin-top: 10px;
-        width:30px;
-        height:30px;
+        width: 30px;
+        height: 30px;
         margin-left: 10px;
     }
 
     .historial-clinico .div {
         background-color: var(--palettewhite);
         width: 375px;
-        height: 812px;
-        min-height: 100vh; /* Asegura altura mínima completa de pantalla */
+        min-height: 90vh; /* Asegura altura mínima completa de pantalla */
         max-height: none;
         overflow-y: auto; /* Habilita scroll vertical */
         position: relative;
@@ -33,34 +32,7 @@
         width: 90%;
         height: 260px;
         top: 302px;
-        margin-left:20px;
         text-align:center;
-    }
-
-    .historial-clinico .home-indicator {
-        left: 5px;
-        position: absolute;
-        width: 375px;
-        height: 34px;
-        top: 546px;
-    }
-
-    .historial-clinico .home-indicator-2 {
-        position: relative;
-        width: 134px;
-        height: 5px;
-        top: 21px;
-        left: 121px;
-        background-color: var(--label-color-light-primary);
-        border-radius: 100px;
-    }
-
-    .historial-clinico .home-indicator-wrapper {
-        left: 0;
-        position: absolute;
-        width: 375px;
-        height: 34px;
-        top: 546px;
     }
 
     .historial-clinico .card-grid {
@@ -76,6 +48,7 @@
         border-radius: 16px;
         overflow-y: scroll;
         margin-top: 70px;
+        margin-left: 0px;
     }
 
         .historial-clinico .card-grid::-webkit-scrollbar {
@@ -120,18 +93,6 @@
         letter-spacing: var(--paragraph-p1-letter-spacing);
         line-height: var(--paragraph-p1-line-height);
         font-style: var(--paragraph-p1-font-style);
-    }
-
-    .historial-clinico .lorem-ipsum-dolor {
-        font-weight: var(--paragraph-p2-font-weight);
-        color: var(--letra);
-        position: relative;
-        align-self: stretch;
-        font-family: var(--paragraph-p2-font-family);
-        font-size: var(--paragraph-p2-font-size);
-        letter-spacing: var(--paragraph-p2-letter-spacing);
-        line-height: var(--paragraph-p2-line-height);
-        font-style: var(--paragraph-p2-font-style);
     }
 
     .historial-clinico .text-wrapper {
@@ -194,19 +155,6 @@
         box-shadow: var(--elevation);
     }
 
-    .historial-clinico .lorem-ipsum-dolor-2 {
-        margin-bottom: -8.00px;
-        font-weight: var(--paragraph-p2-font-weight);
-        color: #4d7b80;
-        position: relative;
-        align-self: stretch;
-        font-family: var(--paragraph-p2-font-family);
-        font-size: var(--paragraph-p2-font-size);
-        letter-spacing: var(--paragraph-p2-letter-spacing);
-        line-height: var(--paragraph-p2-line-height);
-        font-style: var(--paragraph-p2-font-style);
-    }
-
     .historial-clinico .p {
         margin-bottom: -13.00px;
         font-weight: var(--paragraph-p2-font-weight);
@@ -229,58 +177,6 @@
         font-size: var(--paragraph-p2-font-size);
     }
 
-    .historial-clinico .iphone-x-or-newer {
-        position: absolute;
-        width: 375px;
-        height: 44px;
-        top: 0;
-        left: 0;
-        backdrop-filter: blur(8px) brightness(100%);
-        -webkit-backdrop-filter: blur(8px) brightness(100%);
-    }
-
-    .historial-clinico .right-side {
-        position: absolute;
-        width: 67px;
-        height: 11px;
-        top: 17px;
-        left: 294px;
-    }
-
-    .historial-clinico .battery {
-        position: absolute;
-        width: 24px;
-        height: 11px;
-        top: 0;
-        left: 42px;
-    }
-
-    .historial-clinico .wifi {
-        position: absolute;
-        width: 15px;
-        height: 11px;
-        top: 0;
-        left: 22px;
-    }
-
-    .historial-clinico .mobile-signal {
-        position: absolute;
-        width: 17px;
-        height: 11px;
-        top: 0;
-        left: 0;
-    }
-
-    .historial-clinico .left-side {
-        position: absolute;
-        width: 54px;
-        height: 21px;
-        top: 12px;
-        left: 21px;
-        background-image: url(./img/time.svg);
-        background-size: 100% 100%;
-    }
-
     .historial-clinico .overlap {
         position: absolute;
         width: 24px;
@@ -289,14 +185,6 @@
         left: 16px;
         background-image: url(./img/back.svg);
         background-size: 100% 100%;
-    }
-
-    .historial-clinico .icon-back {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 0;
-        left: 0;
     }
 
     .historial-clinico .overlap-2 {
@@ -353,6 +241,25 @@
         object-fit: cover;
     }
 
+    .historial-clinico .navbar {
+        display: flex;
+        width: 375px;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 16px 32px;
+        position: absolute;
+        top: 670px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: var(--bottom-tabbar);
+    }
+
+    .historial-clinico .img {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
 
     /*FORMULARIO*/
 
@@ -398,8 +305,9 @@
         }
 
     .historial-clinico .alert-success,
-    .historial-clinico .alert-warning {
-        width:343px;
+    .historial-clinico .alert-warning,
+    .historial-clinico .alert-error {
+        width: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
         padding: 12px 16px;
@@ -407,6 +315,7 @@
         font-family: var(--paragraph-p2-font-family);
         font-size: var(--paragraph-p2-font-size);
         line-height: var(--paragraph-p2-line-height);
+        margin-left:21px;
     }
 
     .historial-clinico .alert-success {
@@ -416,7 +325,8 @@
         width: 100%;
     }
 
-    .historial-clinico .alert-warning {
+    .historial-clinico .alert-warning,
+    .historial-clinico .alert-error {
         background-color: #fff8e1;
         color: #996d00;
         border: 1px solid #ffc107;
