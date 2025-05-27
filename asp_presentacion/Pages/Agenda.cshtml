@@ -1,0 +1,62 @@
+﻿@page
+@model asp_presentacion.Pages.AgendaModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/styleguideHC.css" />
+    <link rel="stylesheet" href="~/css/styleAgenda.css" />
+</head>
+<body>
+    <div class="historial-clinico">
+        <div class="navbar">
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-home-2.svg" />
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-bell.svg" />
+            <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-setting.svg" />
+        </div>
+        <div class="div">
+
+            <a href="Index">
+                <div class="arrow">
+                    <img src="~/images/left-arrow.png" />
+                </div>
+            </a>
+            <div class="overlap-2">
+                <div class="horizontal-card">
+                    <div class="your-diet-chart">Agenda</div>
+                    <div class="illustration"></div>
+                </div>
+                <img class="image" src="https://c.animaapp.com/xuEWHKzq/img/image-35@2x.png" /> 
+            </div>
+
+            <div class="overlap-group">
+                <div class="card-grid">
+                    <div class="note-card">
+                        <div class="today">Control</div>
+                        <p class="div-2">Especialista: Internista</p>
+                        <p class="div-2">Fecha: 15 de diciembre de 2022</p>
+                        <p class="div-2">Hora: 5 p.m.</p>
+                        <p class="div-2">Médico: Juan Pérez</p>
+                    </div>
+                </div>
+                <div class="search-form-container">
+                    <form method="post">
+                        <button type="submit" class="search-button1" asp-page-handler="#">Eliminar</button>
+                        <button type="submit" class="search-button2" asp-page-handler="#">Reprogramar</button>
+                    </form>
+                </div>
+                <a href="#">
+                    <div class="black-button">
+                        <img src="~/images/plus.png" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
