@@ -1,0 +1,126 @@
+.mensaje {
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+    .mensaje .arrow img{
+        margin-top: 10px;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .mensaje .div {
+        background-color: var(--palettewhite);
+        width: 375px;
+        min-height: 92vh; /* Asegura altura mínima completa de pantalla */
+        max-height: none;
+        overflow-y: auto; /* Habilita scroll vertical */
+        position: relative;
+        padding-bottom: 7px;
+        
+    }
+
+        .mensaje .div::-webkit-scrollbar {
+            width: 0;
+            display: none;
+        }
+
+    .mensaje .overlap-group {
+        position: absolute;
+        width: 90%;
+        height: 300px;
+        top: 202px;
+        text-align: center;
+        
+    }
+
+    .mensaje .card-grid {
+        display: flex;
+        flex-direction: column;
+        width: 340px;
+        align-items: flex-start;
+        padding: 16px;
+        position: absolute;
+        background-color: var(--inkink-06);
+        border-radius: 16px;
+        margin-left: 18px;
+        text-align: left;
+        height:268px;
+    }
+
+
+    .mensaje .today {
+        position: relative;
+        align-self: stretch;
+        margin-top: 5px;
+        font-family: var(--paragraph-p1-font-family);
+        font-weight: 800;
+        color: #1b6379;
+        font-size:25px;
+        letter-spacing: var(--paragraph-p1-letter-spacing);
+        line-height: var(--paragraph-p1-line-height);
+        font-style: var(--paragraph-p1-font-style);
+        text-align:center;
+        margin-top: 80px;
+    }
+
+
+    .mensaje .navbar {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 16px 32px;
+        position: absolute;
+        top: 670px;
+        background-color: white;
+        box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.08);
+        width: 375px;
+        z-index: 10;
+    }
+
+    .mensaje .img {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+    .mensaje .check{
+        width:20px;
+        height: 20px;
+        z-index:10;
+        top: 550px;
+    }
+
+
+    /*FORMULARIO*/
+
+    .mensaje .search-form-container {
+        position: relative; /* quitar el absolute */
+        width: 375px;
+        top:550px;
+        margin: 0 auto;
+        z-index: 10;
+        padding: 10px 16px;
+        border-radius: 12px;
+    }
+
+    .mensaje .search-button1 {
+        background-color: #28bbc9;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 40%;
+        font-family: var(--paragraph-p2-font-family);
+        font-size: 12px;
+        margin-top: 10px; 
+        margin-left: 100px;
+    }
+
+   
