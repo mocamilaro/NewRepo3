@@ -1,9 +1,3 @@
-.body{
-    display:flex;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
 .element-panel-principal {
     background-color: ghostwhite;
     display: flex;
@@ -15,39 +9,10 @@
     .element-panel-principal .div {
         background-color: var(--palettewhite);
         width: 375px;
-        height: 812px;
         min-height: 100vh; /* Asegura altura mínima completa de pantalla */
         max-height: none;
         overflow-y: auto; /* Habilita scroll vertical */
         position: relative;
-    }
-
-    .element-panel-principal{
-        position: absolute;
-        width: 54px;
-        height: 31px;
-        left: 60px;
-        background-size: 100% 100%;
-
-    }
-
-    .element-panel-principal .home-indicator {
-        position: absolute;
-        width: 375px;
-        height: 34px;
-        top: 770px;
-        left: 0;
-        background-color: var(--palettewhite);
-    }
-
-    .element-panel-principal .home-indicator-2 {
-        position: relative;
-        width: 134px;
-        height: 5px;
-        top: 21px;
-        left: 121px;
-        background-color: var(--label-color-light-primary);
-        border-radius: 100px;
     }
 
     .element-panel-principal .img {
