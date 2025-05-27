@@ -107,7 +107,7 @@
         position: absolute;
         top: 670px;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--palettewhite);
         box-shadow: var(--bottom-tabbar);
     }
 
