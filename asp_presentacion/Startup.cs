@@ -83,7 +83,10 @@ namespace asp_presentacion
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
-            app.MapRazorPages();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
             app.UseSession();
             app.Run();
         }
