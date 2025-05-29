@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace asp_presentacion.Pages
 {
-    public class Index1Model : PageModel
+    public class IndexModel : PageModel
     {
-        public void OnGet()
-        {
-        }
+        
+        
     }
 }

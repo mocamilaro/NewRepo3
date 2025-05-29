@@ -20,7 +20,7 @@
         </div>
         <div class="div">
            
-            <a href="Index">
+            <a href="Inicio">
                 <div class="arrow">
                     <img src="~/images/left-arrow.png" />
                 </div>
@@ -47,7 +47,7 @@
                 {
                     <div class="alert-error">
                         <p>Ha ocurrido un error.</p>
-                        <p>Intentando recargar la información.</p>
+                        <p class="p2">Intentando recargar la información.</p>
                     </div>
                 } else {
                     <!-- Mensaje de alerta -->
@@ -57,10 +57,9 @@
                     }
                     else if (Model.BusquedaRealizada == true && Model.Actual == null)
                     {
-                        <div class="alert-warning">No se encontró ningún paciente con la cédula ingresada.</div>
+                        <div class="alert-warning1">No hay información disponible.</div>
                     
                     }else{
-                    <div class="alert-success">Paciente encontrado.</div>
 
                         <div class="card-grid">
                             <div class="row">
@@ -107,7 +106,7 @@
                                     }
                                     else
                                     {
-                                        <p class="alert-warning">No se encontraron diagnósticos.</p>
+                                        <p class="alert-warning">No se encontraron diagnósticos previos.</p>
                                     }
                                 </div>
                             </div>
@@ -123,7 +122,7 @@
                                     }
                                     else
                                     {
-                                        <p class="alert-warning">No se encontraron tratamientos.</p>
+                                        <p class="alert-warning">No se encontraron tratamientos previos.</p>
                                     }
                                 </div>
 
@@ -146,7 +145,7 @@
                                     }
                                     else
                                     {
-                                        <p class="alert-warning">No se encontraron fórmulas.</p>
+                                        <p class="alert-warning">No se encontraron fórmulas previas.</p>
                                     }
                                 </div>
                             </div>

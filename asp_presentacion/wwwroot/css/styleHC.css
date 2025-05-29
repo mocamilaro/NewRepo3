@@ -21,6 +21,7 @@
         overflow-y: auto; /* Habilita scroll vertical */
         position: relative;
         padding-bottom: 7px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
         .historial-clinico .div::-webkit-scrollbar {
@@ -48,7 +49,7 @@
         background-color: var(--inkink-06);
         border-radius: 16px;
         overflow-y: scroll;
-        margin-top: 70px;
+        margin-top: 10px;
         margin-left: 0px;
         text-align: left;
     }
@@ -307,7 +308,7 @@
         }
 
     .historial-clinico .alert-warning {
-        width: 343px;
+        width: 103px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
         padding: 12px 16px;
@@ -315,33 +316,60 @@
         font-family: var(--paragraph-p2-font-family);
         font-size: var(--paragraph-p2-font-size);
         line-height: var(--paragraph-p2-line-height);
+        background-color: #fff8e1;
+        color: #996d00;
+        width: 100%;
     }
 
-    .historial-clinico .alert-success,
-    .historial-clinico .alert-error {
+    .historial-clinico .alert-error,
+    .historial-clinico .alert-warning1 {
         width: 343px;
+        height: 343px;
         margin: 12px auto 0px auto;
         margin-top: 8px;
         padding: 12px 16px;
         border-radius: 8px;
         font-family: var(--paragraph-p2-font-family);
-        font-size: var(--paragraph-p2-font-size);
+        font-size: 18px;
         line-height: var(--paragraph-p2-line-height);
         margin-left: 21px;
+        background-color: var(--inkink-06);
+        color: var(--letra);
+        font-weight: 800;
+        width: 100%;
     }
 
     .historial-clinico .alert-success {
+        width: 343px;
+        margin: 12px auto 0px auto;
+        margin-top: 8px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-family: var(--paragraph-p2-font-family);
+        font-size: 10px;
+        line-height: var(--paragraph-p2-line-height);
+        margin-left: 21px;
         background-color: #e6fffa;
         color: #1b6379;
         border: 1px solid #28bbc9;
         width: 100%;
     }
 
-    .historial-clinico .alert-warning,
+    .historial-clinico .alert-warning1{
+        padding-top: 150px;
+    }
+
     .historial-clinico .alert-error {
-        background-color: #fff8e1;
-        color: #996d00;
-        border: 1px solid #ffc107;
+        background-color: var(--inkink-06);
+        color: var(--letra);
+        font-weight: 800;
         width: 100%;
     }
 
+    .historial-clinico .alert-error p{
+        margin-top:100px;
+    }
+
+        .historial-clinico .alert-error .p2 {
+            margin-top: 50px;
+        }

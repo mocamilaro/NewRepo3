@@ -1,6 +1,6 @@
 ﻿@page
+@model asp_presentacion.Pages.Index1Model
 @{
-    ViewData["Title"] = "Inicio";
 }
 
 <!DOCTYPE html>
@@ -8,58 +8,27 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="~/css/global.css" />
-    <link rel="stylesheet" href="~/css/styleguide.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/styleguideHC.css" />
+    <link rel="stylesheet" href="~/css/styleIndex.css" />
 </head>
 <body>
-    <div class="element-panel-principal">
+    <div class="index">
         <div class="div">
-            <div class="title-user-profile">
-                <a href="Perfil" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
-                    <div class="text-wrapper">👋🏻 Hola, Julia!</div>
-                    <div class="profile-image">
-                        <img class="image" src="https://c.animaapp.com/xuEWHKzq/img/image@2x.png" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </a>
+            <div class="overlap-group">
+                <div class="card-grid">
+                    <div class="today">Bienvenido</div>
+                    <div class="today2">Mi Salud</div>
+                </div>
             </div>
-            <div class="cards-container">
-                <a href="MensajeExito" class="card">
-                    <div class="horizontal-card">
-                        <div class="your-diet-chart">Recomendaciones</div>
-                        <img class="card-image" src="https://c.animaapp.com/xuEWHKzq/img/image-1@2x.png" />
-                    </div>
-                </a>
-                <a href="HistoriaClinica" class="card">
-                    <div class="horizontal-card">
-                        <div class="your-diet-chart">Historial clínico</div>
-                        <img class="card-image" src="https://c.animaapp.com/xuEWHKzq/img/image-33@2x.png" />
-                    </div>
-                </a>
-                <a href="index1" class="card">
-                    <div class="horizontal-card">
-                        <div class="your-diet-chart">Fórmula</div>
-                        <img class="card-image" src="https://c.animaapp.com/xuEWHKzq/img/image-2@2x.png" />
-                    </div>
-                </a>
-                <a href="Agenda" class="card">
-                    <div class="horizontal-card">
-                        <div class="your-diet-chart">Agenda</div>
-                        <img class="card-image" src="https://c.animaapp.com/xuEWHKzq/img/image-35@2x.png" />
-                    </div>
-                </a>
-                <a href="Paciente" class="card">
-                    <div class="horizontal-card">
-                        <div class="your-diet-chart">Administración</div>
-                        <img class="card-image" src="https://c.animaapp.com/xuEWHKzq/img/image-32@2x.png" />
-                    </div>
-                </a>
+            <img class="logo" src="/images/logo.svg" />
+
+            <div class="search-form-container">
+                <button type="button" class="search-button1" role="link" onclick="window.location='Inicio'">Iniciar sesión</button>
+                <button type="button" class="search-button1" role="link" onclick="window.location='Registro'">Crear cuenta</button>
             </div>
-            <div class="navbar-simple">
-                <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-home-2.svg" />
-                <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-bell.svg" />
-                <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-setting.svg" />
-            </div>
+
         </div>
     </div>
+
 </body>
 </html>
