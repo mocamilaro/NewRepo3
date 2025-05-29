@@ -8,7 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar Datos</title>
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -30,10 +32,13 @@
             background-color: white;
             width: 100%;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 30px auto 0;
             display: flex;
             flex-direction: column;
+            min-height: 92vh;
+            max-height: none;
             overflow-y: auto;
+            padding-top: 20px;
         }
 
         .header {
@@ -58,11 +63,15 @@
         }
 
         .title-container {
-            background-color: #f5f5f5;
-            padding: 15px;
+            background-color: rgba(237, 236, 244, 1);
+            padding: 50px 40px;
             border-radius: 12px;
-            margin: 15px;
+            margin: 20px 15px 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2px);
+            min-height: 60px;
         }
+
 
         .title {
             color: #2b5876;
@@ -72,6 +81,9 @@
 
         .form-section {
             padding: 10px 15px;
+            max-width: 450px;
+            margin: 0 auto;
+            width: 90%;
         }
 
         .form-group {
@@ -87,6 +99,9 @@
 
         .form-input {
             width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
             padding: 12px 15px;
             border: 1px solid #0099cc;
             border-radius: 8px;
@@ -101,13 +116,13 @@
         .submit-btn {
             background-color: #17ced4;
             color: white;
-            border: none;
+            border: 2px solid #D3D3D3;
             border-radius: 8px;
             padding: 12px;
             width: 100px;
             font-size: 16px;
             cursor: pointer;
-            margin: 10px auto 20px;
+            margin: 20px auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -164,12 +179,36 @@
             justify-content: center;
             margin-top: 20px;
         }
+
+        .input-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 16px 32px;
+            position: absolute;
+            top: 670px;
+            background-color: white;
+            box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.08);
+            width: 375px;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <a href="javascript:history.back();" class="back-button">←</a>
+            <a href="@(ViewContext.HttpContext.Request.Headers["Referer"].ToString())"
+               class="back-button"
+               id="backButton">←</a>
         </div>
 
         <div class="title-container">
@@ -180,40 +219,68 @@
             <input type="hidden" asp-for="PacienteEditable.Id" />
             <input type="hidden" asp-for="PacienteEditable.Cedula" />
 
-            <label class="form-label" asp-for="PacienteEditable.Nombre">Nombre</label>
-            <input type="text" class="form-input" asp-for="PacienteEditable.Nombre" placeholder="Ingrese su nombre completo" required>
-            <span asp-validation-for="PacienteEditable.Nombre" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.Nombre">Nombre</label>
+                <input type="text" class="form-input" asp-for="PacienteEditable.Nombre" placeholder="Ingrese su nombre completo" required>
+                <span asp-validation-for="PacienteEditable.Nombre" class="text-danger"></span>
+            </div>
 
-            <label class="form-label" asp-for="PacienteEditable.Telefono">Teléfono</label>
-            <input type="tel" class="form-input" asp-for="PacienteEditable.Telefono" placeholder="Ingrese su número de teléfono" required>
-            <span asp-validation-for="PacienteEditable.Telefono" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.Telefono">Teléfono</label>
+                <input type="tel" class="form-input" asp-for="PacienteEditable.Telefono"
+                       placeholder="Ingrese su número de teléfono Solo Numeros"
+                       inputmode="numeric" pattern="[0-9]*" required>
+                <span asp-validation-for="PacienteEditable.Telefono" class="text-danger"></span>
+            </div>
 
-            <label class="form-label" asp-for="PacienteEditable.TipoSang">Tipo de sangre</label>
-            <input type="text" class="form-input" asp-for="PacienteEditable.TipoSang" placeholder="Ej: O+, A-, B+">
-            <span asp-validation-for="PacienteEditable.TipoSang" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.TipoSang">Tipo de sangre</label>
+                <select class="form-input" asp-for="PacienteEditable.TipoSang" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <span asp-validation-for="PacienteEditable.TipoSang" class="text-danger"></span>
+            </div>
 
-            <label class="form-label" asp-for="PacienteEditable.Email">Email</label>
-            <input type="email" class="form-input" asp-for="PacienteEditable.Email" placeholder="correo@ejemplo.com">
-            <span asp-validation-for="PacienteEditable.Email" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.Email">Email</label>
+                <input type="email" class="form-input" asp-for="PacienteEditable.Email" placeholder="correo@ejemplo.com">
+                <span asp-validation-for="PacienteEditable.Email" class="text-danger"></span>
+            </div>
 
-            <label class="form-label" asp-for="PacienteEditable.Acudiente">Acudiente</label>
-            <input type="text" class="form-input" asp-for="PacienteEditable.Acudiente" placeholder="Nombre del acudiente">
-            <span asp-validation-for="PacienteEditable.Acudiente" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.Acudiente">Acudiente</label>
+                <input type="text" class="form-input" asp-for="PacienteEditable.Acudiente" placeholder="Nombre del acudiente">
+                <span asp-validation-for="PacienteEditable.Acudiente" class="text-danger"></span>
+            </div>
 
-            <label class="form-label" asp-for="PacienteEditable.eps">EPS</label>
-            <input type="text" class="form-input" asp-for="PacienteEditable.eps" placeholder="Entidad promotora de salud">
-            <span asp-validation-for="PacienteEditable.eps" class="text-danger"></span>
+            <div class="input-card">
+                <label class="form-label" asp-for="PacienteEditable.eps">EPS</label>
+                <input type="text" class="form-input" asp-for="PacienteEditable.eps" placeholder="Entidad promotora de salud">
+                <span asp-validation-for="PacienteEditable.eps" class="text-danger"></span>
+            </div>
 
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" id="submitButton">
                 <span>✓</span>
             </button>
         </form>
     </div>
 
-    <div class="footer">
-        <div class="footer-icon">⊞</div>
-        <div class="footer-icon">🔔</div>
-        <div class="footer-icon">⚙</div>
+    <div class="navbar">
+        <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-home-2.svg" />
+        <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-bell.svg" />
+        <img class="img" src="https://c.animaapp.com/xuEWHKzq/img/icon-setting.svg" />
     </div>
 </body>
+
+<script src="~/js/validarTipoSangre.js"></script>
+<script src="~/js/validarTelefono.js"></script>
+<script src="~/js/confirmarSalida.js"></script>
 </html>
